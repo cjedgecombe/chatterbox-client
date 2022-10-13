@@ -3,9 +3,10 @@
 // with and manipulate the data.
 
 var Messages = {
-
   // TODO: Define how you want to store your messages.
-  _data: null,
+  _data: [],
+
+  //data should be an array of message obejcts
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
