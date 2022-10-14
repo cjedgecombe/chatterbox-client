@@ -9,10 +9,10 @@ var MessageView = {
 
       <div class="chat">
         <div class="username">
-          <%= ${this.username} %>
+          <%- username %>
         </div>
         <div>
-          <%- ${this.text} %>
+          <%- text %>
         </div>
       </div>
     `)

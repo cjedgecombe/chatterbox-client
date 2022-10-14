@@ -10,6 +10,9 @@ var App = {
 
   initialize: function() {
     App.username = window.location.search.substr(10);
+
+    // create new Promise, pass in
+
     FormView.initialize();
     RoomsView.initialize();
     MessagesView.initialize();
@@ -27,7 +30,9 @@ var App = {
       // examine the response from the server request:
       Messages._data = data;
       console.log('collected data', Messages._data);
+      MessagesView.render();
       // TODO: Use the data to update Messages and Rooms
+      callback();
       // and re-render the corresponding views.
     });
   },
