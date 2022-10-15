@@ -8,8 +8,6 @@ var MessagesView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
-    console.log('messagesView initialized');
-    console.log(MessagesView.render);
   },
 
   render: function() {
@@ -18,17 +16,18 @@ var MessagesView = {
     for (var i = 0; i < Messages._data.length; i++) {
       // pass each message entry into the messageView function to render into template
       var currentMessage = Messages._data[i];
-      console.log(currentMessage);
+
       // append to the DOM
       var html = MessageView.render(currentMessage);
-      console.log(html);
-      //console.log(html);
+
       this.$chats.append(html);
     }
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+    var html = MessageView.render(message);
+    this.$chats.prepend(html);
   },
 
   handleClick: function(event) {

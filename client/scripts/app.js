@@ -27,11 +27,12 @@ var App = {
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      // examine the response from the server request:
+      // store message data in Messages object
       Messages._data = data;
-      console.log('collected data', Messages._data);
+      // render the message view AFTER data has been stored
       MessagesView.render();
       // TODO: Use the data to update Messages and Rooms
+      // turn off the spinner
       callback();
       // and re-render the corresponding views.
     });
