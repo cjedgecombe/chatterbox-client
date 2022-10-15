@@ -10,12 +10,12 @@ var MessagesView = {
     // when this view loads.
   },
 
-  render: function() {
+  render: function(messageArray) {
     // TODO: Render _all_ the messages.
     // loop over messages array
-    for (var i = 0; i < Messages._data.length; i++) {
+    for (var i = 0; i < messageArray.length; i++) {
       // pass each message entry into the messageView function to render into template
-      var currentMessage = Messages._data[i];
+      var currentMessage = messageArray[i];
 
       // append to the DOM
       var html = MessageView.render(currentMessage);

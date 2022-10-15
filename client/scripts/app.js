@@ -6,10 +6,10 @@ var App = {
 
   $spinner: $('.spinner img'),
 
-  username: 'anonymous',
+  username: 'Alex and CJ',
 
   initialize: function() {
-    App.username = window.location.search.substr(10);
+    //App.username = window.location.search.substr(10);
 
     // create new Promise, pass in
 
@@ -23,14 +23,21 @@ var App = {
 
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
+
+    //setTimeout function for app refresh every 30sec (could possibly already be working, recheck later)
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // store message data in Messages object
       Messages._data = data;
+      // console.log(Messages._data);
+      Rooms._data = data;
+      Rooms.sortRooms(Rooms._data);
+      // console.log('rooms', Rooms.sortedRooms);
       // render the message view AFTER data has been stored
-      MessagesView.render();
+      MessagesView.render(Messages._data);
+      RoomsView.render();
       // TODO: Use the data to update Messages and Rooms
       // turn off the spinner
       callback();

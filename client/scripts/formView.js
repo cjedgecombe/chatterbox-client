@@ -17,10 +17,10 @@ var FormView = {
     var currentMessage = {
       username: App.username,
       text: $('input:text').val(),
-      roomname: null,
+      roomname: $('#rooms select').val(),
     };
     //push message to API
-    console.log(currentMessage);
+    //console.log(currentMessage);
     Parse.create(currentMessage);
     //add message to current chat window
     MessagesView.renderMessage(currentMessage);
